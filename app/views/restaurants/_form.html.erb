@@ -1,7 +1,9 @@
 <%= simple_form_for (@restaurant) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <%= f.input :name %>
   <%= f.input :address %>
   <%= f.input :phone_number %>
   <%= f.input :category, as: :select, collection: Restaurant::CATEGORY %>
-  <%= f.submit :submit, class: "btn btn-dark" %>
+  <%= f.submit :submit, class: "btn btn-dark m-1" %>
 <% end %>

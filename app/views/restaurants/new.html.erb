@@ -1,3 +1,7 @@
-<%= render 'form', restaurant: @restaurant %>
+<div class="m-3">
+  <h1>Add a restaurant</h1>
 
-<%= link_to 'back', restaurants_path, class: "btn btn-light" %>
+  <%= render 'form', restaurant: @restaurant %>
+
+  <%= link_to 'back', restaurants_path, class: "btn btn-light m-1" %>
+</div>
