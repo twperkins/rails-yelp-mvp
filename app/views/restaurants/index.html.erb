@@ -1,0 +1,8 @@
+<h1>Welcome to the Restaurant DB</h1>
+<%= link_to "add", new_restaurant_path, class: "btn btn-dark" %>
+
+<% @restaurants.each do |restaurant| %>
+  <h3><%= link_to restaurant.name, restaurant_path(restaurant), class: "btn btn-outline-dark btn-lg"%></h3>
+  <p><%= ["Delicious", "Scrummy", "Tasty", "Wholesome", "Delightful", "Sumptious", "Latest", "Fusion", "Hearty", "Home-made", "Gentrified"].sample %> <%= restaurant.category %> food at <%= restaurant.address %></p>
+  <p>Phone number: <%= restaurant.phone_number %></p>
+<% end %>

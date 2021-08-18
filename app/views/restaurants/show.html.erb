@@ -1,0 +1,16 @@
+<h1><%= @restaurant.name %></h1>
+<p><%= @restaurant.address %></p>
+<br>
+<h3><%= @restaurant.category %></h3>
+<p><%= @restaurant.phone_number %></p>
+
+<h2>Reviews:</h2>
+
+<%= link_to "add review", new_restaurant_review_path(@restaurant), class: "btn btn-dark" %>
+
+<% @restaurant.reviews.each do |review| %>
+  <p><%= review.content %></p>
+  <p><%= '😇' * review.rating %></p>
+<% end %>
+
+<%= link_to 'back', restaurants_path, class: "btn btn-light" %>
